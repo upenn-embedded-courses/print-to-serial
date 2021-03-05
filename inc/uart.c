@@ -12,8 +12,8 @@ void UART_init(int BAUD_PRESCALER)
   //Enable receiver and transmitter 
   UCSR0B = (1<<RXEN0)|(1<<TXEN0);
   /* Set frame format: 2 stop bits, 8 data bits */
-  UCSR0C |= (1<<USBS0); // 2 stop bits
   UCSR0C = (1<<UCSZ01) | (1<<UCSZ00); // 8 data bits
+  UCSR0C |= (1<<USBS0); // 2 stop bits
 }
 
 void UART_send(unsigned char data)
